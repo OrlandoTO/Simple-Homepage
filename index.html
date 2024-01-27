@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIMPLE HOMEPAGE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body id="body">
+    <header>
+        <nav class="menu">
+            <a href="#" id="link-icon-homepage"><img src="./img/alarado-icon-homepage.svg"
+                    alt="Icon navbar light mode"></a>
+            <a href="#" id="link-icon-homepage-dark"><img src="./img/alarado-icon-homepage-dark.svg"
+                    alt="Icon navbar dark mode"></a>
+
+            <div class="menu-items" id="menu-items">
+                <ul>
+                    <li><a href="#" id="link-about-us">About us</a></li>
+                    <li><a href="#">Product</a></li>
+                    <li><a href="#">Resource</a></li>
+                    <li><a href="#">Contact</a></li>
+
+                </ul>
+                <label class="switch" id="switch-container">
+                    <input type="checkbox" id="switch">
+                    <span id="icon-moon-fill-light"></span>
+                    <span id="icon-sun-fill"></span>
+                </label>
+                <div class="menu-close" id="menu-close">
+                    ✖
+                </div>
+            </div>
+
+            <div class="icon-menu-mobile" id="icon-menu-mobile">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
+        </nav>
+    </header>
+    <main>
+        <section class="content">
+            <span id="content-badge">😎 SIMPLE WAY TO COMMUNICATE</span>
+            <h1 id="content-header">Actions for Accessibility in Design</h1>
+            <p id="content-body">
+                The fastest way to build and deploy websites with resusable components.
+            </p>
+            <p>
+                <button class="btn-primary">GET STARTED</button>
+                <a href="#" class="link">Get live demo</a>
+            </p>
+
+
+            <ul>
+                <li><img src="./img/Done_ring_round_fill.svg" alt=""><span>No credit card required</span></li>
+                <li><img src="./img/Done_ring_round_fill.svg" alt=""><span>No software to install</span></li>
+            </ul>
+
+
+        </section>
+        <section class="img-hero">
+            <img src="./img/hero-image-simple-homepage.png" alt="">
+        </section>
+    </main>
+
+
+</body>
+<script>
+
+    let switchElement = document.getElementById("switch");
+    let switchElementClasses = document.getElementById("switch-container");
+    let bodyElement = document.getElementById("body")
+    let contentBadgeElement = document.getElementById("content-badge")
+    let contentHeaderElement = document.getElementById("content-header")
+    let linkAboutUsElement = document.getElementById("link-about-us")
+    let linkIconHomepageElement = document.getElementById("link-icon-homepage")
+    let linkIconHomepageDarkElement = document.getElementById("link-icon-homepage-dark")
+    let menuItemsElement = document.getElementById("menu-items")
+    let menuCloseElement = document.getElementById("menu-close")
+    let iconMenuMobileElement = document.getElementById("icon-menu-mobile")
+    switchElement.addEventListener('change', function (e) {
+        let iconDarkMode = document.getElementById("icon-moon-fill-light")
+        let iconLightMode = document.getElementById("icon-sun-fill")
+        iconDarkMode.classList.toggle("bg-white")
+        iconDarkMode.classList.toggle("bg-image-moon-dark")
+
+        iconLightMode.classList.toggle("color-white")
+        iconLightMode.classList.toggle("bg-transparent")
+        iconLightMode.classList.toggle("bg-image-moon-light")
+
+        // Change background body
+        bodyElement.classList.toggle("bg-dark")
+        menuItemsElement.classList.toggle("bg-dark")
+        menuCloseElement.classList.toggle("color-light")
+
+        //Change text body
+        contentBadgeElement.classList.toggle("color-light")
+        contentHeaderElement.classList.toggle("color-light")
+        linkAboutUsElement.classList.toggle("color-light")
+        iconMenuMobileElement.classList.toggle("bg-light-menu-icon")
+     
+        linkIconHomepageElement.classList.toggle("hide")
+        linkIconHomepageDarkElement.classList.toggle("show")
+
+
+
+    })
+
+
+    iconMenuMobileElement.addEventListener("click",function(){
+        menuItemsElement.classList.toggle("open")
+    })
+    menuCloseElement.addEventListener("click",function(){
+        menuItemsElement.classList.toggle("open")
+    })
+</script>
+
+</html>
